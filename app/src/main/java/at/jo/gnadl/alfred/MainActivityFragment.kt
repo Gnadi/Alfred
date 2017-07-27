@@ -38,16 +38,16 @@ class MainActivityFragment : Fragment() {
     // Store instance variables based on arguments passed
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        page = this.arguments.getInt("someInt", 0)
-        title = this.arguments.getString("someTitle")
+        if(null != this.arguments) {
+            page = this.arguments.getInt("someInt", 1)
+            title = this.arguments.getString("someTitle")
+        }
     }
 
     // Inflate the view for the fragment based on layout XML
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_main, container, false)
-        val tvLabel = view.findViewById<TextView>(R.id.mainpage) as TextView
-        tvLabel.text = page.toString() + " -- " + title
         return view
     }
 }

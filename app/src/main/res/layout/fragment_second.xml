@@ -6,13 +6,5 @@
     tools:context="at.jo.gnadl.alfred.SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/secondpage"
-        style="?android:textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:lineSpacingMultiplier="1.2"
-        android:padding="16dp"
-        android:text="thomas" />
 
 </FrameLayout>
