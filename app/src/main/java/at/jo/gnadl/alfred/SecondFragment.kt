@@ -31,6 +31,8 @@ class SecondFragment : Fragment() {
     // Store instance variables based on arguments passed
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        page = this.arguments.getInt("someInt", 1)
+        title = this.arguments.getString("someTitle")
     }
 
     // Inflate the view for the fragment based on layout XML
