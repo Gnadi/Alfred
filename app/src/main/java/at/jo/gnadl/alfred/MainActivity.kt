@@ -90,9 +90,7 @@ class MainActivity : AppCompatActivity() {
                 0 // Fragment # 0 - This will show FirstFragment
                 -> return fragment.newInstance(0, "Page # 1")
                 1 // Fragment # 0 - This will show FirstFragment different title
-                -> return fragment.newInstance(1, "Page # 2")
-                2 // Fragment # 1 - This will show SecondFragment
-                -> return fragment1.newInstance(2, "Page # 3")
+                -> return fragment1.newInstance(1, "Page # 2")
                 else -> return null
             }
         }
