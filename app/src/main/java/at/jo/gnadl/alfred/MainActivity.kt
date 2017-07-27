@@ -17,9 +17,11 @@ import android.support.v4.app.FragmentPagerAdapter
 import at.jo.gnadl.alfred.MainActivity.MyPagerAdapter
 import android.widget.Toast
 import android.support.v4.view.ViewPager.OnPageChangeListener
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
     var adapterViewPager: FragmentPagerAdapter? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+
 
         vpPager.addOnPageChangeListener(object : OnPageChangeListener {
 
@@ -100,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         companion object {
-            private val NUM_ITEMS = 3
+            private val NUM_ITEMS = 2
         }
 
     }
