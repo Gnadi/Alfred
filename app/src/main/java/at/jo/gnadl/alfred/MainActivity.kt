@@ -84,13 +84,11 @@ class MainActivity : AppCompatActivity() {
 
         // Returns the fragment to display for that page
         override fun getItem(position: Int): Fragment? {
-            var fragment = MainActivityFragment()
-            var fragment1 = SecondFragment()
             when (position) {
                 0 // Fragment # 0 - This will show FirstFragment
-                -> return fragment.newInstance(0, "Page # 1")
+                -> return MainActivityFragment.newInstance(0, "Page # 1")
                 1 // Fragment # 0 - This will show FirstFragment different title
-                -> return fragment1.newInstance(1, "Page # 2")
+                -> return SecondFragment.newInstance(1, "Page # 2")
                 else -> return null
             }
         }

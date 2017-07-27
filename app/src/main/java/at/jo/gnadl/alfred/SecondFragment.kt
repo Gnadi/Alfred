@@ -12,16 +12,20 @@ import android.widget.TextView
 class SecondFragment : Fragment() {
 
     private var title: String? = null
-    private var page: Int = 0
+    private var page: Int = 1
 
     // newInstance constructor for creating fragment with arguments
-    fun newInstance(page: Int, title: String): SecondFragment {
-        val fragmentFirst = SecondFragment()
-        val args = Bundle()
-        args.putInt("someInt", page)
-        args.putString("someTitle", title)
-        fragmentFirst.setArguments(args)
-        return fragmentFirst
+    // Wrap new instance function inside companion object
+    companion object {
+        // newInstance constructor for creating fragment with arguments
+        fun newInstance(page: Int, title: String): SecondFragment {
+            val fragmentSecond = SecondFragment()
+            val args = Bundle()
+            args.putInt("someInt", page)
+            args.putString("someTitle", title)
+            fragmentSecond.setArguments(args)
+            return fragmentSecond
+        }
     }
 
     // Store instance variables based on arguments passed

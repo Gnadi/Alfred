@@ -22,13 +22,17 @@ class MainActivityFragment : Fragment() {
     private var page: Int = 0
 
     // newInstance constructor for creating fragment with arguments
-    fun newInstance(page: Int, title: String): MainActivityFragment {
-        val fragmentFirst = MainActivityFragment()
-        val args = Bundle()
-        args.putInt("someInt", page)
-        args.putString("someTitle", title)
-        fragmentFirst.setArguments(args)
-        return fragmentFirst
+    // Wrap new instance function inside companion object
+    companion object {
+        // newInstance constructor for creating fragment with arguments
+        fun newInstance(page: Int, title: String): MainActivityFragment {
+            val fragmentFirst = MainActivityFragment()
+            val args = Bundle()
+            args.putInt("someInt", page)
+            args.putString("someTitle", title)
+            fragmentFirst.setArguments(args)
+            return fragmentFirst
+        }
     }
 
     // Store instance variables based on arguments passed
