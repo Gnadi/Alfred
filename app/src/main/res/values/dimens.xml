@@ -1,3 +1,15 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="seconds">50sp</dimen>
+    <dimen name="result_font">40sp</dimen>
+
+    <style name="fontForNotificationLandingPage">
+        <item name="android:fontFamily">roboto_light</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">65sp</item>
+        <item name="android:height">90dp</item>
+        <item name="android:width">90dp</item>
+        <item name="android:paddingRight">100dp</item>
+    </style>
+
 </resources>
