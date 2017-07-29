@@ -61,10 +61,6 @@ class MainActivity : AppCompatActivity() {
         for (x in 0..9) {
             inLay.addView(getView(x))
         }
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
 
 
         /*val timer = TextView(this)

@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context="at.jo.gnadl.alfred.MainActivity">
 
+    <at.jo.gnadl.alfred.VerticalViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,85 +28,5 @@
 
     <include layout="@layout/content_main"
         android:id="@+id/include" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.984" />
-    <at.jo.gnadl.alfred.VerticalViewPager
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <HorizontalScrollView
-        android:id="@+id/hsv"
-        android:layout_width="fill_parent"
-        android:layout_height="165dp"
-        android:layout_marginBottom="188dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_weight="0"
-        android:fillViewport="true"
-        android:measureAllChildren="false"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:id="@+id/innerLay"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"></LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/mands"
-        android:layout_width="172dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
-        android:width="90dp"
-        android:height="90dp"
-        android:fontFamily="@font/roboto_light"
-        android:text="34"
-        android:textSize="65sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/pager"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.637" />
-    <TextView
-        android:layout_width="163dp"
-        android:layout_height="37dp"
-        android:text="Linie 2 Vogelweide"
-        android:fontFamily="@font/roboto_light"
-        android:textSize="20sp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/mands"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/hsv"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintVertical_bias="0.234" />
 
 </android.support.constraint.ConstraintLayout>
