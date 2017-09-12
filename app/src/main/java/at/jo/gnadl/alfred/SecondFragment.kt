@@ -11,18 +11,16 @@ import android.widget.TextView
 
 class SecondFragment : Fragment() {
 
-    private var title: String? = null
     private var page: Int = 1
 
     // newInstance constructor for creating fragment with arguments
     // Wrap new instance function inside companion object
     companion object {
         // newInstance constructor for creating fragment with arguments
-        fun newInstance(page: Int, title: String): SecondFragment {
+        fun newInstance(page: Int): SecondFragment {
             val fragmentSecond = SecondFragment()
             val args = Bundle()
             args.putInt("someInt", page)
-            args.putString("someTitle", title)
             fragmentSecond.setArguments(args)
             return fragmentSecond
         }
@@ -31,8 +29,7 @@ class SecondFragment : Fragment() {
     // Store instance variables based on arguments passed
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        page = this.arguments.getInt("someInt", 1)
-        title = this.arguments.getString("someTitle")
+        page = this.arguments.getInt("someInt")
     }
 
     // Inflate the view for the fragment based on layout XML

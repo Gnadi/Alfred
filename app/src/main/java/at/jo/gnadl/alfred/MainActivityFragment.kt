@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 
 
@@ -18,18 +19,16 @@ import android.widget.TextView
 class MainActivityFragment : Fragment() {
 
 
-    private var title: String? = null
     private var page: Int = 0
 
     // newInstance constructor for creating fragment with arguments
     // Wrap new instance function inside companion object
     companion object {
         // newInstance constructor for creating fragment with arguments
-        fun newInstance(page: Int, title: String): MainActivityFragment {
+        fun newInstance(page: Int): MainActivityFragment {
             val fragmentFirst = MainActivityFragment()
             val args = Bundle()
             args.putInt("someInt", page)
-            args.putString("someTitle", title)
             fragmentFirst.setArguments(args)
             return fragmentFirst
         }
@@ -39,9 +38,9 @@ class MainActivityFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if(null != this.arguments) {
-            page = this.arguments.getInt("someInt", 1)
-            title = this.arguments.getString("someTitle")
+            page = this.arguments.getInt("someInt")
         }
+
     }
 
     // Inflate the view for the fragment based on layout XML

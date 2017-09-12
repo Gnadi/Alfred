@@ -51,9 +51,10 @@ class VerticalViewPager : ViewPager {
                 val yPosition = position * view.getHeight()
                 view.setTranslationY(yPosition)
 
+
             } else { // (1,+Infinity]
                 // This page is way off-screen to the right.
-                view.setAlpha(0F)
+                view.setAlpha(1F)
             }
         }
     }

@@ -1,11 +1,8 @@
 package at.jo.gnadl.alfred
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.support.annotation.IdRes
-import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
@@ -19,13 +16,14 @@ import android.support.v4.app.FragmentPagerAdapter
 import at.jo.gnadl.alfred.MainActivity.MyPagerAdapter
 import android.widget.Toast
 import android.support.v4.view.ViewPager.OnPageChangeListener
-import kotlinx.android.synthetic.main.content_main.*
 import android.os.CountDownTimer
 import android.util.Log
 import android.util.TypedValue
 import android.widget.TextView
 import android.widget.LinearLayout
-import android.view.LayoutInflater
+import android.support.v4.app.FragmentStatePagerAdapter
+
+
 
 
 
@@ -106,7 +104,6 @@ class MainActivity : AppCompatActivity() {
             // Called when the scroll state changes:
             // SCROLL_STATE_IDLE, SCROLL_STATE_DRAGGING, SCROLL_STATE_SETTLING
             override fun onPageScrollStateChanged(state: Int) {
-                // Code goes here
             }
         })
 
@@ -147,16 +144,11 @@ class MainActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment? {
             when (position) {
                 0 // Fragment # 0 - This will show FirstFragment
-                -> return MainActivityFragment.newInstance(0, "Page # 1")
+                -> return MainActivityFragment.newInstance(0)
                 1 // Fragment # 0 - This will show FirstFragment different title
-                -> return SecondFragment.newInstance(1, "Page # 2")
+                -> return SecondFragment.newInstance(1)
                 else -> return null
             }
-        }
-
-        // Returns the page title for the top indicator
-        override fun getPageTitle(position: Int): CharSequence {
-            return "Page " + position
         }
 
         companion object {
@@ -165,4 +157,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+}
+
+private class ScreenSlidePagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+    override fun getCount(): Int {
+        return 2
+    }
+
+    override fun getItem(position: Int): Fragment {
+        return MainActivityFragment()
+    }
 }
